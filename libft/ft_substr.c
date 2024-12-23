@@ -3,25 +3,27 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *substr;
 	size_t i;
-	size_t j;
+	size_t s_len;
 
-	substr = (char *)malloc(sizeof(*s) * (len +1));
+	if(!s)
+		return(NULL);
 
-	if (str == 0)
-		return (NULL);
-	
+	s_len = ft_strlen(s);
+
+	if (start >= s_len)
+		len = 0;
+	if(len > s_len - start)
+		len = s_len -start;
+	substr = (char *)malloc(sizeof(*s) * (len + 1));
+    if (!substr)
+        return (NULL);
 	i = 0;
-	j = 0;
-
-	while(s[i])
+	while ( i < len)
 	{
-		if (i >= start && j < len)
-		{
-			substr[j] = s[i];
-			j++;
-		}
+		substr[i] = s[start + i];
 		i++;
 	}
-	substr[j] = 0;
-	return (substr);
+	  substr[i] = '\0';
+
+    return (substr);
 }
