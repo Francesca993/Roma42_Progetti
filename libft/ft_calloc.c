@@ -4,6 +4,7 @@ void *ft_calloc(size_t count, size_t size)
 {
 	void *p;
 	size_t b;
+
 	if (count != 0 && size > SIZE_MAX / count)
         return (NULL);
 	b = count * size;
