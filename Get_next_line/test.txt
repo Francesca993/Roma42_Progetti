@@ -1,0 +1,5 @@
+Prima riga
+Seconda riga con newline\n
+Terza riga senza newline 
+HelloiWorld
+
